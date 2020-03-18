@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
   urlImage: Observable<string>;
 
   ngOnInit() {
-    this.authService.getUsers(true).subscribe((catsSnapshot) => {
+    this.authService.getUsers().subscribe((catsSnapshot) => {
       this.users = [];
       catsSnapshot.forEach((catData: any) => {
         this.users.push({

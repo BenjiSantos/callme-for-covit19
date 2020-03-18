@@ -14,7 +14,6 @@ import {FormsModule} from '@angular/forms';
 import {AngularFirestore} from '@angular/fire/firestore';
 import { HomeComponent } from './components/home/home.component';
 import {AngularFireStorage} from '@angular/fire/storage';
-import {MDBBootstrapModule} from 'angular-bootstrap-md';
 
 @NgModule({
   imports: [

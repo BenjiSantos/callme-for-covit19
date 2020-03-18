@@ -5,14 +5,14 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "XXXXX",
-    authDomain: "XXXXXXXXXXXXXXX",
-    databaseURL: "XXXXXXXXXXXXXXXXXXXXX",
-    projectId: "XXXXXXXXX",
-    storageBucket: "XXXXXXXXXXXXXXX",
-    messagingSenderId: "XXXXXXXX",
-    appId: "XXXXXXXXXXX",
-    measurementId: "XXXXXXXXXX"
+    apiKey: "AIzaSyDKCrnrGNKpYRdODN6mJRCIA_414KfNvOg",
+    authDomain: "angular-cobit19.firebaseapp.com",
+    databaseURL: "https://angular-cobit19.firebaseio.com",
+    projectId: "angular-cobit19",
+    storageBucket: "angular-cobit19.appspot.com",
+    messagingSenderId: "1073045209052",
+    appId: "1:1073045209052:web:c6439cfe3569a352075919",
+    measurementId: "G-DNW124SF23"
   }
 };
 /*

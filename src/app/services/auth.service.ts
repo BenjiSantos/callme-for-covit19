@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { map } from 'rxjs/operators';
-import User, { auth } from 'firebase/app';
+import { auth } from 'firebase/app';
 
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
 import { UserInterface } from '../models/user';
@@ -58,7 +58,7 @@ export class AuthService {
       id: user.uid,
       email: user.email,
       active: true,
-      cant: 1,
+      cant: 0,
       especialidad: 'medico',
       roles: {
         editor: true
@@ -71,8 +71,8 @@ export class AuthService {
     return this.afs.doc<UserInterface>(`users/${userUid}`).valueChanges();
   }
 
-  public getUsers(active) {
+  public getUsers() {
     return this.afs.collection('users', ref => ref.where('active', '==', true)
-      .where('especialidad', '==', 'medico').where('cant', '<=', 1)).snapshotChanges();
+      .where('especialidad', '==', 'medico').where('cant', '<=', 1).limit(1)).snapshotChanges();
   }
 }
