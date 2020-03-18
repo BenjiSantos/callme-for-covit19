@@ -1,1 +1,7 @@
-<p>home works!</p>
+<div class="media" *ngFor="let user of users">
+  <div class="media-body">
+    <a href="https://whereby.com/{{(user.data.especialidad).substring(0,3)}}" target="_blank">
+      {{user.data.especialidad}}
+    </a>
+  </div>
+</div>

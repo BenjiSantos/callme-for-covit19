@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {AuthService} from '../../services/auth.service';
+import {AngularFireStorage} from '@angular/fire/storage';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private authService: AuthService, private storage: AngularFireStorage) { }
+  public users = [];
 
   ngOnInit() {
+    this.authService.getUsers().subscribe((catsSnapshot) => {
+      this.users = [];
+      catsSnapshot.forEach((catData: any) => {
+        this.users.push({
+          id: catData.payload.doc.id,
+          data: catData.payload.doc.data()
+        });
+      });
+    });
   }
-
 }

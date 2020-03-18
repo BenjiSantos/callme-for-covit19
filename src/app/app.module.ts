@@ -14,6 +14,7 @@ import {FormsModule} from '@angular/forms';
 import {AngularFirestore} from '@angular/fire/firestore';
 import { HomeComponent } from './components/home/home.component';
 import {AngularFireStorage} from '@angular/fire/storage';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import {AngularFireStorage} from '@angular/fire/storage';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
+    DashboardComponent,
   ],
   providers: [AngularFireAuth, AngularFirestore, AngularFireStorage],
   bootstrap: [ AppComponent ]

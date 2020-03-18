@@ -57,6 +57,7 @@ export class AuthService {
     const data: UserInterface = {
       id: user.uid,
       email: user.email,
+      name: 'juan perez',
       active: true,
       cant: 0,
       especialidad: 'medico',
@@ -72,7 +73,6 @@ export class AuthService {
   }
 
   public getUsers() {
-    return this.afs.collection('users', ref => ref.where('active', '==', true)
-      .where('especialidad', '==', 'medico').where('cant', '<=', 1).limit(1)).snapshotChanges();
+    return this.afs.collection('users', ref => ref.where('active', '==', true).where('cant', '<=', 4)).snapshotChanges();
   }
 }
