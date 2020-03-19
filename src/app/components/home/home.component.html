@@ -1,7 +1,15 @@
-<div class="media" *ngFor="let user of users">
-  <div class="media-body">
-    <a href="https://whereby.com/{{(user.data.especialidad).substring(0,3)}}" target="_blank">
-      {{user.data.especialidad}}
-    </a>
+<div class="container cards-container">
+  <div class="row">
+    <div class="col-md-4 p-2" *ngFor="let user of users">
+      <div class="card">
+        <img class="card-img-top" src="assets/{{user.data.especialidad}}.png" alt="Card image cap">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{(user.data.especialidad).substring(0,1).toUpperCase()}}{{(user.data.especialidad).substring(1)}}</h5>
+          <p class="card-text">Si necesita conversar y resolver consultas con un especialista en {{user.data.especialidad}}, puede unirse a la siguiente reunion virtual</p>
+          <a href="https://whereby.com/{{(user.data.especialidad).substring(0,3)}}" class="btn btn-primary" target="_blank">
+            Unirse</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
