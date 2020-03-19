@@ -10,36 +10,44 @@
 
 
               <form #formRegister="ngForm" (ngSubmit)="onAddUser()">
+                <!-- ============ TITULO ========= -->
                 <h1 class="h3 mb-3 font-weight-normal">Register</h1>
                 <div class="alert alert-danger" role="alert" *ngIf="isError">
                   {{msgError}}
                 </div>
+
+                <!-- ============ INPUT  USERNAME + VALIDACION ========= -->
                 <div class="form-group">
-                  <input type="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="email" required minlength="8">
+                  <input type="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="email" required
+                    minlength="8">
                 </div>
                 <div class="alert alert-danger" role="alert" *ngIf="email.touched && !email.valid">
                   <div *ngIf="email.errors.required">Email is required</div>
                   <div *ngIf="email.errors.minlength">Email must be at least 8 characters</div>
                 </div>
+
+                 <!-- ============ INPUT PASSWORD + VALIDACION ========= -->
                 <div class="form-group">
-                  <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="password" required minlength="5"
-                    maxlength="10">
+                  <input type="password" name="password" class="form-control" placeholder="Password"
+                    [(ngModel)]="password" required minlength="5" maxlength="10">
                 </div>
                 <div class="alert alert-danger" role="alert" *ngIf="password.touched && !password.valid">
                   <div *ngIf="password.errors.required">Password is required</div>
                   <div *ngIf="password.errors.minlength">Password must be at least 5 characters</div>
                 </div>
-                <hr>
-                <div class="progress">
-                  <div [style.visibility]="(uploadPercent == 0) ? 'hidden' : 'visible'" class="progress-bar progress-bar-striped bg-success"
-                    role="progressbar" [style.width]="(uploadPercent | async) +'%'">
 
-                    <!-- <span class="progressText" *ngIf="urlImage | async">
-                      Ok!!</span> -->
-                  </div>
+                <div class="form-group">
+                  <label for="inlineFormCustomSelect">Escoge tu especialidad a brindar</label>
+                  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                    <option value="1">Médico</option>
+                    <option value="2">Psicologo</option>
+                    <option value="3">Tecnologia</option>
+                  </select>
                 </div>
-                <br>
+
+
                 <button type="submit" class="btn btn-lg btn-primary btn-block">Register</button>
+
                 <div class="form-group">
                   <a routerLink="/user/login" class="form-control login-user">Do you have account?</a>
                 </div>

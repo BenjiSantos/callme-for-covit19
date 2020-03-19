@@ -11,6 +11,10 @@
   border-color: rgba(0,0,0,0.2);
 }
 
+button{
+  width: 100%;
+}
+
 .btn-facebook{
   background: #3b5998;
 }
@@ -20,15 +24,4 @@
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-h2{
-  font-family: 'Anton', sans-serif;
-  text-align: center;
-  padding: 20px;
-}
-.alineacion{
-  text-align: center;
-}
-.btn-lg{
-  margin: 20px;
-}
+
