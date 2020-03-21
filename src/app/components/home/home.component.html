@@ -18,7 +18,7 @@
   <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand"> Ayuda COVID-19 PERÚ</a>
     <form class="form-inline">
-      <a class="navbar-brand">¿Deseas ayudar ?</a>
+      <a class="navbar-brand">¿Deseas ayudar?</a>
       <button class="btn btn-primary  my-2 my-sm-0" type="submit">
         Registrate
       </button>
@@ -29,12 +29,13 @@
     <div class="container">
       <div class="fondito">
         <h5 class=" fondito section-title h1">
-          Professionales ayudando en linea la pandemia mundial COVID-19
+          Profesionales ayudando en línea sobre la pandemia mundial COVID-19
         </h5>
         <h2 class="lead fondito parraro"  >
-          Somos 2 jovenes que realizamos esta interfaz sin fines de lucro para
-          que muchas personas puedan recibir ayuda durante el estado de
-          emergencia ordenado en el pais.
+          Somos 2 jóvenes que realizamos esta interfaz sin fines de lucro para
+          que muchas personas puedan recibir ayuda durante el Estado de
+          emergencia ordenada en el país.
+
         </h2>
         <hr />
       </div>
@@ -60,7 +61,8 @@
                       }}{{ user.data.especialidad.substring(1) }}
                     </h4>
                     <p class="card-text">
-                      Professional medico con años de experiencia, estoy aqui
+                      Professional  {{ user.data.especialidad.substring(0, 1).toUpperCase()
+                      }}{{ user.data.especialidad.substring(1) }} con años de experiencia, estoy aquí
                       para consultas.
                     </p>
                     <a href="https://whereby.com/{{(user.data.especialidad).substring(0,3)}}" class="btn btn-primary btn-sm" target="_blank" >CONECTAR</a>
